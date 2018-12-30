@@ -5,7 +5,7 @@ import IMaterializer from 'tarant/dist/actor-system/materializer/materializer'
 import IResolver from 'tarant/dist/actor-system/resolver/resolver'
 
 export class RemoteResolverMaterializer implements IResolver, IMaterializer {
-  private resolvedActors: Set<IActor> = new Set()
+  private resolvedActors: Set<Actor> = new Set()
   private config : any
   
   constructor(config: any) {
@@ -31,14 +31,14 @@ export class RemoteResolverMaterializer implements IResolver, IMaterializer {
   }
 
   public async resolveActorById(id: string): Promise<Actor> {
-    const actor = await axios
-      .get(`${this.config.paths.pull}/${id}`)
-      .then(result => Object.assign(eval(`new ${this.config.ActorTypes[result.data.type]}("${id}")`), result.data))
+    const result = await axios.get(`${this.config.paths.pull}/${id}`)
+    const actor = this.config.ActorTypes[result.data.type](id)
+    actor.updateFrom(result.data)
     this.resolvedActors.add(actor)
     return Promise.resolve(actor)
   }
 
-  private updateFromBackend() {
+  private updateFromBackend(){
     this.resolvedActors.forEach((actor: IActor) =>
       axios.get(`${this.config.paths.pull}/${actor.id}`).then(result => (actor as any).updateFrom(result.data)),
     )

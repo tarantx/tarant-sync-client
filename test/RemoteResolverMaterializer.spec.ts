@@ -10,8 +10,13 @@ import { RemoteResolverMaterializer } from '../lib/RemoteResolverMaterializer'
 import * as faker from 'faker'
 import { Actor, ActorMessage } from 'tarant';
 
-abstract class FakeActor {
-
+class FakeActor {
+    constructor(id: string) {
+        this.id = id  
+    }
+    readonly id: string
+    toJson(){}// => Promise.resolve(expectToJson),
+    updateFrom(){}//jest.fn()
 }
 
 describe('RemoteResolverMaterializer', () => {
@@ -32,7 +37,7 @@ describe('RemoteResolverMaterializer', () => {
                   pull: faker.internet.url(), 
                   push: faker.internet.url(), 
               },
-              ActorTypes: { FakeActor }
+              ActorTypes: { FakeActor: () => new FakeActor(id) }
           },
           expectToJson = {
               data:{
@@ -43,7 +48,7 @@ describe('RemoteResolverMaterializer', () => {
         mockAxios.get.mockResolvedValue(expectToJson)
 
           let local = new RemoteResolverMaterializer(config)
-          let result : FakeActor = await local.resolveActorById(id)
+          let result = await local.resolveActorById(id)
           expect(mockAxios.get).toHaveBeenCalledWith(`${config.paths.pull}/${id}`)
           expect(result).toBeDefined()
       
@@ -63,7 +68,7 @@ describe('RemoteResolverMaterializer', () => {
                 pull: faker.internet.url(), 
                 push: faker.internet.url(), 
             },
-            ActorTypes: { FakeActor }
+            ActorTypes: { FakeActor: () => new FakeActor(id) }
         },
         expectToJson = {
             data:{
@@ -72,7 +77,7 @@ describe('RemoteResolverMaterializer', () => {
                 id
             }
           }
-      mockAxios.get.mockResolvedValue(expectToJson)
+        mockAxios.get.mockResolvedValue(expectToJson)
 
         let local = new RemoteResolverMaterializer(config)
         
@@ -97,7 +102,7 @@ describe('RemoteResolverMaterializer', () => {
                 pull: faker.internet.url(), 
                 push: faker.internet.url(), 
             },
-            ActorTypes: { FakeActor }
+            ActorTypes: { FakeActor: () => new FakeActor(id) }
         },
         expectToJson = {
             data:{
@@ -109,7 +114,7 @@ describe('RemoteResolverMaterializer', () => {
           actor = jest.fn<Actor>(() => ({ 
             id, 
             toJson: () => Promise.resolve(expectToJson),
-            fromJson: jest.fn()
+            updateFrom: jest.fn()
           }))(),
         actorMessage = jest.fn<ActorMessage>()()
         
@@ -145,7 +150,8 @@ describe('RemoteResolverMaterializer', () => {
           expectToJson = {random: faker.random.uuid() },
           actor = jest.fn<Actor>(() => ({ 
               id, 
-              toJson: () => Promise.resolve(expectToJson)
+              toJson: () => Promise.resolve(expectToJson),
+              updateFrom: jest.fn()
             }))(),
           actorMessage = jest.fn<ActorMessage>()()
           let local = new RemoteResolverMaterializer(config)
