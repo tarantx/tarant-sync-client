@@ -15,8 +15,8 @@ class FakeActor {
         this.id = id  
     }
     readonly id: string
-    toJson(){}// => Promise.resolve(expectToJson),
-    updateFrom(){}//jest.fn()
+    toJson(){}
+    updateFrom(){}
 }
 
 describe('RemoteResolverMaterializer', () => {
