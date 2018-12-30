@@ -4,8 +4,6 @@ import { IActor } from 'tarant/dist/actor-system/actor'
 import IMaterializer from 'tarant/dist/actor-system/materializer/materializer'
 import IResolver from 'tarant/dist/actor-system/resolver/resolver'
 
-jest.useFakeTimers();
-
 export class RemoteResolverMaterializer implements IResolver, IMaterializer {
   private resolvedActors: Set<IActor> = new Set()
   private config : any
