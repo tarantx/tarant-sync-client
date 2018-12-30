@@ -1,14 +1,14 @@
 {
-  "name": "tarant-remote-sync",
+  "name": "tarant-sync-client",
   "version": "0.3.1",
-  "description": "remote-sync resolver and materializer for the tarant framework",
+  "description": "remote-sync client resolver and materializer for the tarant framework",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "contributors": [
     "Kevin Mas Ruiz <masruizkevin@gmail.com>",
     "Kanekotic <alvarojosepl@gmail.com>"
   ],
-  "repository": "git@github.com:tarantx/tarant-remote-sync.git",
+  "repository": "git@github.com:tarantx/tarant-sync-client.git",
   "license": "MIT",
   "keywords": [
     "actor system",

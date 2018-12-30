@@ -1,1 +1,1 @@
-# tarant-remote-sync
+# tarant-sync-client
