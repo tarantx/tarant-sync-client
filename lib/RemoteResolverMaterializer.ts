@@ -32,7 +32,7 @@ export class RemoteResolverMaterializer implements IResolver, IMaterializer {
 
   public async resolveActorById(id: string): Promise<Actor> {
     const result = await axios.get(`${this.config.paths.pull}/${id}`)
-    const actor = this.config.ActorTypes[result.data.type](id)
+    const actor = new (this.config.ActorTypes[result.data.type])(id)
     actor.updateFrom(result.data)
     this.resolvedActors.add(actor)
     return Promise.resolve(actor)

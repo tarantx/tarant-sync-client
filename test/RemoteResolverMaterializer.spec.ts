@@ -37,7 +37,7 @@ describe('RemoteResolverMaterializer', () => {
                   pull: faker.internet.url(), 
                   push: faker.internet.url(), 
               },
-              ActorTypes: { FakeActor: () => new FakeActor(id) }
+              ActorTypes: { FakeActor }
           },
           expectToJson = {
               data:{
@@ -68,7 +68,7 @@ describe('RemoteResolverMaterializer', () => {
                 pull: faker.internet.url(), 
                 push: faker.internet.url(), 
             },
-            ActorTypes: { FakeActor: () => new FakeActor(id) }
+            ActorTypes: { FakeActor }
         },
         expectToJson = {
             data:{
@@ -102,7 +102,7 @@ describe('RemoteResolverMaterializer', () => {
                 pull: faker.internet.url(), 
                 push: faker.internet.url(), 
             },
-            ActorTypes: { FakeActor: () => new FakeActor(id) }
+            ActorTypes: { FakeActor }
         },
         expectToJson = {
             data:{
