@@ -1,8 +1,9 @@
-import { uglify } from "rollup-plugin-uglify"
+import { terser } from "rollup-plugin-terser"
 import commonjs from 'rollup-plugin-commonjs'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript'
-import replace from 'rollup-plugin-replace'
+import json from "rollup-plugin-json"
+import builtins from "rollup-plugin-node-builtins"
 
 export default {
     output: {
@@ -16,13 +17,12 @@ export default {
             tsconfig: false,
             target: "es5",
             declaration: true,
-            strict: true,
-            lib: ["es6"],
-
+            strict: true
         }),
-        nodeResolve(), 
+        nodeResolve({ jsnext: true, preferBuiltins: true, browser: true }), 
         commonjs(), 
-        uglify(),
-        replace({'process.env.NODE_ENV': JSON.stringify('development')})
+        builtins(),
+        terser(),
+        json()
     ]
 }
