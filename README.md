@@ -26,6 +26,7 @@ Initialize the sync client with the configuration you desire and add it to your 
 ```js
 
 import { RemoteResolverMaterializer } from "tarant-sync-client";
+import AppActor from '../AppActor';
 
 const config : any  = {
     sync: {
@@ -36,7 +37,7 @@ const config : any  = {
           pull: "/pull", 
           push: "/push", 
       },
-      ActorTypes: { AppActor }
+      actorTypes: { AppActor }
 }
 
 const remote = new RemoteResolverMaterializer(config)
