@@ -21,7 +21,7 @@ add it to your project using `npm install tarant-sync-client --save` or `yarn ad
 
 ## Usage
 
-Initialize the sync client with the configuration you desire and add it to your actor system as both a materializxer and a resolver
+Initialize the sync client with the configuration you desire and add it to your actor system as both a materializer and a resolver
 
 ```js
 
