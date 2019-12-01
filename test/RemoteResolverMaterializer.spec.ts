@@ -108,12 +108,15 @@ describe('RemoteResolverMaterializer', () => {
             id,
           },
         },
-        actor = jest.fn<Actor>(() => ({
-          id,
-          toJson: () => Promise.resolve(expectToJson),
-          updateFrom: jest.fn(),
-        }))(),
-        actorMessage = jest.fn<ActorMessage>()()
+        actor = jest.fn<Actor, []>(
+          () =>
+            ({
+              id,
+              toJson: () => Promise.resolve(expectToJson),
+              updateFrom: jest.fn(),
+            } as any),
+        )(),
+        actorMessage = jest.fn<ActorMessage, []>()()
 
       mockAxios.get.mockResolvedValue(expectToJson)
 
@@ -144,12 +147,15 @@ describe('RemoteResolverMaterializer', () => {
           },
         },
         expectToJson = { random: faker.random.uuid() },
-        actor = jest.fn<Actor>(() => ({
-          id,
-          toJson: () => Promise.resolve(expectToJson),
-          updateFrom: jest.fn(),
-        }))(),
-        actorMessage = jest.fn<ActorMessage>()()
+        actor = jest.fn<Actor, []>(
+          () =>
+            ({
+              id,
+              toJson: () => Promise.resolve(expectToJson),
+              updateFrom: jest.fn(),
+            } as any),
+        )(),
+        actorMessage = jest.fn<ActorMessage, []>()()
       let local = new RemoteResolverMaterializer(config)
       await local.onAfterMessage(actor, actorMessage)
       expect(mockAxios.post).toHaveBeenCalledWith(`${config.paths.push}/${id}`, expectToJson)
