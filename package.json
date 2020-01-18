@@ -37,8 +37,8 @@
   "devDependencies": {
     "@types/axios": "0.14.0",
     "@types/faker": "4.1.9",
-    "@types/jest": "24.0.25",
-    "@types/node": "13.1.6",
+    "@types/jest": "24.9.0",
+    "@types/node": "13.1.8",
     "coveralls": "3.0.9",
     "faker": "4.1.0",
     "jest": "24.9.0",
@@ -55,11 +55,11 @@
     "tslib": "1.10.0",
     "tslint": "5.20.1",
     "tslint-config-prettier": "1.18.0",
-    "typescript": "3.7.4"
+    "typescript": "3.7.5"
   },
   "dependencies": {
     "axios": "0.19.1",
-    "tarant": "2.7.7"
+    "tarant": "2.7.8"
   },
   "jest": {
     "preset": "ts-jest"
