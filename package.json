@@ -38,28 +38,28 @@
     "@types/axios": "0.14.0",
     "@types/faker": "4.1.10",
     "@types/jest": "25.1.4",
-    "@types/node": "13.9.0",
+    "@types/node": "13.9.1",
     "coveralls": "3.0.9",
     "faker": "4.1.0",
     "jest": "25.1.0",
     "prettier": "1.19.1",
-    "rollup": "2.0.2",
+    "rollup": "2.0.6",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-json": "4.0.0",
     "rollup-plugin-node-builtins": "2.1.2",
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-replace": "2.2.0",
-    "rollup-plugin-terser": "5.2.0",
+    "rollup-plugin-terser": "5.3.0",
     "rollup-plugin-typescript2": "0.26.0",
     "ts-jest": "25.2.1",
     "tslib": "1.11.1",
-    "tslint": "6.0.0",
+    "tslint": "6.1.0",
     "tslint-config-prettier": "1.18.0",
     "typescript": "3.8.3"
   },
   "dependencies": {
     "axios": "0.19.2",
-    "tarant": "2.7.15"
+    "tarant": "2.7.16"
   },
   "jest": {
     "preset": "ts-jest"
