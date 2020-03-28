@@ -36,21 +36,21 @@
   },
   "devDependencies": {
     "@types/axios": "0.14.0",
-    "@types/faker": "4.1.10",
+    "@types/faker": "4.1.11",
     "@types/jest": "25.1.4",
-    "@types/node": "13.9.2",
+    "@types/node": "13.9.5",
     "coveralls": "3.0.11",
     "faker": "4.1.0",
-    "jest": "25.1.0",
-    "prettier": "1.19.1",
-    "rollup": "2.1.0",
+    "jest": "25.2.3",
+    "prettier": "2.0.2",
+    "rollup": "2.2.0",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-json": "4.0.0",
     "rollup-plugin-node-builtins": "2.1.2",
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-replace": "2.2.0",
     "rollup-plugin-terser": "5.3.0",
-    "rollup-plugin-typescript2": "0.26.0",
+    "rollup-plugin-typescript2": "0.27.0",
     "ts-jest": "25.2.1",
     "tslib": "1.11.1",
     "tslint": "6.1.0",
@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "axios": "0.19.2",
-    "tarant": "2.7.17"
+    "tarant": "2.7.18"
   },
   "jest": {
     "preset": "ts-jest"
