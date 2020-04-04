@@ -40,7 +40,7 @@ export class RemoteResolverMaterializer implements IResolver, IMaterializer {
 
   private updateFromBackend() {
     this.resolvedActors.forEach((actor: IActor) =>
-      axios.get(`${this.config.paths.pull}/${actor.id}`).then(result => (actor as any).updateFrom(result.data)),
+      axios.get(`${this.config.paths.pull}/${actor.id}`).then((result) => (actor as any).updateFrom(result.data)),
     )
   }
 }
