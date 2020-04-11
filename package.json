@@ -38,12 +38,12 @@
     "@types/axios": "0.14.0",
     "@types/faker": "4.1.11",
     "@types/jest": "25.2.1",
-    "@types/node": "13.11.0",
+    "@types/node": "13.11.1",
     "coveralls": "3.0.11",
     "faker": "4.1.0",
-    "jest": "25.2.7",
-    "prettier": "2.0.2",
-    "rollup": "2.3.2",
+    "jest": "25.3.0",
+    "prettier": "2.0.4",
+    "rollup": "2.6.0",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-json": "4.0.0",
     "rollup-plugin-node-builtins": "2.1.2",
@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "axios": "0.19.2",
-    "tarant": "2.7.19"
+    "tarant": "2.7.20"
   },
   "jest": {
     "preset": "ts-jest"
