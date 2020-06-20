@@ -1,6 +1,6 @@
 {
   "name": "tarant-sync-client",
-  "version": "0.3.30",
+  "version": "0.3.31",
   "description": "remote-sync client resolver and materializer for the tarant framework",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
