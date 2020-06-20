@@ -43,7 +43,7 @@
     "faker": "4.1.0",
     "jest": "26.0.1",
     "prettier": "2.0.5",
-    "rollup": "2.16.0",
+    "rollup": "2.17.1",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-json": "4.0.0",
     "rollup-plugin-node-builtins": "2.1.2",
@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "axios": "0.19.2",
-    "tarant": "2.7.29"
+    "tarant": "2.7.30"
   },
   "jest": {
     "preset": "ts-jest"
