@@ -43,7 +43,7 @@
     "faker": "4.1.0",
     "jest": "26.1.0",
     "prettier": "2.0.5",
-    "rollup": "2.18.1",
+    "rollup": "2.18.2",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-json": "4.0.0",
     "rollup-plugin-node-builtins": "2.1.2",
@@ -55,11 +55,11 @@
     "tslib": "2.0.0",
     "tslint": "6.1.2",
     "tslint-config-prettier": "1.18.0",
-    "typescript": "3.9.5"
+    "typescript": "3.9.6"
   },
   "dependencies": {
     "axios": "0.19.2",
-    "tarant": "2.7.31"
+    "tarant": "2.7.32"
   },
   "jest": {
     "preset": "ts-jest"
