@@ -1,4 +1,5 @@
 jest.useFakeTimers()
+jest.spyOn(global, 'setInterval')
 
 const mockAxios = {
   post: jest.fn(),
@@ -7,7 +8,7 @@ const mockAxios = {
 jest.mock('axios', () => ({ __esModule: true, default: mockAxios }))
 
 import { RemoteResolverMaterializer } from '../lib/RemoteResolverMaterializer'
-import * as faker from 'faker'
+import { faker } from '@faker-js/faker'
 import { Actor, ActorMessage } from 'tarant'
 
 class FakeActor {
@@ -27,11 +28,11 @@ describe('RemoteResolverMaterializer', () => {
 
   describe('as a Resolver', () => {
     it('should try retrieve actor from remote', async () => {
-      const id = faker.random.uuid(),
+      const id = faker.datatype.uuid(),
         config = {
           sync: {
             active: true,
-            delay: faker.random.number(1000),
+            delay: faker.datatype.number(1000),
           },
           paths: {
             pull: faker.internet.url(),
@@ -42,7 +43,7 @@ describe('RemoteResolverMaterializer', () => {
         expectToJson = {
           data: {
             type: 'FakeActor',
-            random: faker.random.uuid(),
+            random: faker.datatype.uuid(),
           },
         }
       mockAxios.get.mockResolvedValue(expectToJson)
@@ -56,11 +57,11 @@ describe('RemoteResolverMaterializer', () => {
 
   describe('live sync', () => {
     it('should sync actors that are in both sides if it was added by resolver', async () => {
-      const id = faker.random.uuid(),
+      const id = faker.datatype.uuid(),
         config = {
           sync: {
             active: true,
-            delay: faker.random.number(1000),
+            delay: faker.datatype.number(1000),
           },
           paths: {
             pull: faker.internet.url(),
@@ -71,7 +72,7 @@ describe('RemoteResolverMaterializer', () => {
         expectToJson = {
           data: {
             type: 'FakeActor',
-            random: faker.random.uuid(),
+            random: faker.datatype.uuid(),
             id,
           },
         }
@@ -89,11 +90,11 @@ describe('RemoteResolverMaterializer', () => {
     })
 
     it('should sync actors that are in both sides if it was added by materializer', async () => {
-      const id = faker.random.uuid(),
+      const id = faker.datatype.uuid(),
         config = {
           sync: {
             active: true,
-            delay: faker.random.number(1000),
+            delay: faker.datatype.number(1000),
           },
           paths: {
             pull: faker.internet.url(),
@@ -104,7 +105,7 @@ describe('RemoteResolverMaterializer', () => {
         expectToJson = {
           data: {
             type: 'FakeActor',
-            random: faker.random.uuid(),
+            random: faker.datatype.uuid(),
             id,
           },
         },
@@ -135,18 +136,18 @@ describe('RemoteResolverMaterializer', () => {
 
   describe('as a Materializer', () => {
     it('should send message if actor is updated', async () => {
-      const id = faker.random.uuid(),
+      const id = faker.datatype.uuid(),
         config = {
           sync: {
             active: true,
-            delay: faker.random.number(1000),
+            delay: faker.datatype.number(1000),
           },
           paths: {
             pull: faker.internet.url(),
             push: faker.internet.url(),
           },
         },
-        expectToJson = { random: faker.random.uuid() },
+        expectToJson = { random: faker.datatype.uuid() },
         actor = jest.fn<Actor, []>(
           () =>
             ({
