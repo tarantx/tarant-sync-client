@@ -35,15 +35,15 @@
     "preversion": "yarn test"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.3.0",
+    "@faker-js/faker": "^7.4.0",
     "@types/axios": "0.14.0",
     "@types/faker": "6.6.9",
     "@types/jest": "28.1.6",
-    "@types/node": "18.6.4",
+    "@types/node": "18.7.3",
     "coveralls": "3.1.1",
     "jest": "28.1.3",
     "prettier": "2.7.1",
-    "rollup": "2.77.2",
+    "rollup": "2.77.3",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-json": "4.0.0",
     "rollup-plugin-node-builtins": "2.1.2",
@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "axios": "0.27.2",
-    "tarant": "3.1.5"
+    "tarant": "3.1.6"
   },
   "jest": {
     "preset": "ts-jest"
