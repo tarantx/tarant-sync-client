@@ -4,6 +4,9 @@ import nodeResolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript2'
 import json from "rollup-plugin-json"
 import builtins from "rollup-plugin-node-builtins"
+import { createRequire } from 'module'
+
+const require = createRequire(import.meta.url)
 
 export default {
     output: {
