@@ -68,3 +68,4 @@ dist
 dist
 coverage
 .rpt2_cache/
+.parcel-cache

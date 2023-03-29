@@ -1,3 +1,3 @@
 export { RemoteResolverMaterializer } from './RemoteResolverMaterializer'
-export { IUpdatable } from './IUpdatable'
-export { IExportable } from './IExportable'
+export type { IUpdatable } from './IUpdatable'
+export type { IExportable } from './IExportable'
