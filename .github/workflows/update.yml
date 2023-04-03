@@ -15,7 +15,7 @@ jobs:
           token: ${{ secrets.REPO_TOKEN }}
       - uses: actions/setup-node@master
       - name: install upgrade
-        run:  npm outdated | awk 'NR>1 {print $1"@"$4}' | xargs npm install
+        run:  npm outdated | awk 'NR>1 {print $1"@"$4}' | xargs npm install -E
       - name: install dependencies
         run: npm install
       - name: run tests
